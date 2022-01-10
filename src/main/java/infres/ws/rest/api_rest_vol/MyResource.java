@@ -1,24 +1,21 @@
+
 package infres.ws.rest.api_rest_vol;
 
-import jakarta.ws.rs.GET;
-import jakarta.ws.rs.Path;
-import jakarta.ws.rs.Produces;
-import jakarta.ws.rs.core.MediaType;
+import javax.ws.rs.GET;
+import javax.ws.rs.Path;
+import javax.ws.rs.Produces;
 
-/**
- * Root resource (exposed at "myresource" path)
- */
-@Path("myresource")
+// The Java class will be hosted at the URI path "/myresource"
+@Path("/myresource")
 public class MyResource {
 
-    /**
-     * Method handling HTTP GET requests. The returned object will be sent
-     * to the client as "text/plain" media type.
-     *
-     * @return String that will be returned as a text/plain response.
-     */
-    @GET
-    @Produces(MediaType.TEXT_PLAIN)
+    // TODO: update the class to suit your needs
+    
+    // The Java method will process HTTP GET requests
+    @GET 
+    // The Java method will produce content identified by the MIME Media
+    // type "text/plain"
+    @Produces("text/plain")
     public String getIt() {
         return "Got it!";
     }
