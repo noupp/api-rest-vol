@@ -8,6 +8,12 @@ public class Vol {
 	private ArrayList<Place> places;
 	private Date date;
 	
+	public Vol(int id, ArrayList<Place> places, Date date){
+		this.id = id;
+		this.places = places;
+		this.date = date;
+	}
+	
 	public int getId() {
 		return this.id;
 	}

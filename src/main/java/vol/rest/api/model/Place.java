@@ -5,6 +5,12 @@ public class Place {
 	private TypePlace typePlace;
 	private int price;
 	
+	public Place(int id, TypePlace typePlace, int price) {
+		this.id = id;
+		this.typePlace = typePlace;
+		this.price = price;
+	}
+	
 	public int getId() {
 		return this.id;
 	}

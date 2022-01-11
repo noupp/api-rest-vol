@@ -2,10 +2,16 @@ package vol.rest.api.model;
 
 import java.util.ArrayList;
 
-public class Compagnie {
+public class Company {
 	private int id;
 	private String name;
 	private ArrayList<Vol> vols;
+	
+	public Company(int id, String name, ArrayList<Vol> vols) {
+		this.id = id;
+		this.name = name;
+		this.vols = vols;
+	}
 	
 	public int getId() {
 		return this.id;
