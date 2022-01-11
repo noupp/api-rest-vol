@@ -5,7 +5,7 @@ import jakarta.ws.rs.Path;
 /**
  * Root resource (exposed at "Vol" path)
  */
-@Path("Vol")
+@Path("vol")
 public class VolController {
 
 }

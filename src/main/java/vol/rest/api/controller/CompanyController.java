@@ -9,9 +9,9 @@ import jakarta.ws.rs.Produces;
 import vol.rest.api.service.CompanyService;
 
 /**
- * Root resource (exposed at "Compagnie" path)
+ * Root resource (exposed at "compagnie" path)
  */
-@Path("Compagnie")
+@Path("compagnie")
 public class CompanyController {
 	
 	/**
@@ -20,12 +20,11 @@ public class CompanyController {
      *
      * @return String that will be returned as a text/plain response.
      */
-	/**@GET
+	@GET
 	@Produces("application/json; charset=UTF-8")
-	public JSONArray showCompaniesInfo() {
-		System.out.println(new CompanyService().toJson());
-		return new CompanyService().toJson();
-	}**/
+	public String showCompaniesInfo() {
+		return new CompanyService().toJson().toJSONString();
+	}
 	
     /**
      * Method handling HTTP GET requests. The returned object will be sent

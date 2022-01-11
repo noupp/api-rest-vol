@@ -28,7 +28,7 @@ public class CompanyService {
 		JSONObject s = new JSONObject();
 		s.put("id", company.getId());
 		s.put("name", company.getName());
-		s.put("vols", company.getVols());
+		//s.put("vols", company.getVols());
 		return s;
 	}
 	
@@ -39,10 +39,8 @@ public class CompanyService {
 	@SuppressWarnings("unchecked")
 	public JSONArray toJson() {
 		JSONArray companiesJSON = new JSONArray();
-		
 		for (Company company: getAllCompanies()) {
-			this.companyToJson(company);
-			companiesJSON.add(company);
+			companiesJSON.add(this.companyToJson(company));
 		}
 		return companiesJSON;
 	}

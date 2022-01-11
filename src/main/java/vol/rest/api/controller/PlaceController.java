@@ -5,7 +5,7 @@ import jakarta.ws.rs.Path;
 /**
  * Root resource (exposed at "Place" path)
  */
-@Path("Place")
+@Path("place")
 public class PlaceController {
 
 }
