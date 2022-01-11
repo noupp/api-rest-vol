@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 import vol.rest.api.DevDatabases;
 import vol.rest.api.model.Company;
-import vol.rest.api.model.Vol;
+import vol.rest.api.model.Flight;
 
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
@@ -29,8 +29,8 @@ public class CompanyService {
 		return r;
 	}
 	
-	public ArrayList<Vol> getAllVolsFromCompany(String name){
-		return getCompanyByName(name).getVols();
+	public ArrayList<Flight> getAllFlightsFromCompany(String name){
+		return getCompanyByName(name).getFlights();
 	}
 	
 	/**

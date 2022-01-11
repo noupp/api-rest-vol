@@ -2,10 +2,10 @@ package vol.rest.api.model;
 
 public class Place {
 	private int id;
-	private TypePlace typePlace;
+	private PlaceType typePlace;
 	private int price;
 	
-	public Place(int id, TypePlace typePlace, int price) {
+	public Place(int id, PlaceType typePlace, int price) {
 		this.id = id;
 		this.typePlace = typePlace;
 		this.price = price;
@@ -19,11 +19,11 @@ public class Place {
 		this.id = id;
 	}
 	
-	public TypePlace getTypePlace() {
+	public PlaceType getTypePlace() {
 		return this.typePlace;
 	}
 	
-	public void setTypePlace(TypePlace typePlace) {
+	public void setTypePlace(PlaceType typePlace) {
 		this.typePlace = typePlace;
 	}
 	

@@ -22,7 +22,7 @@ public class PlaceService {
 	public JSONObject placeToJson(Place place) {
 		JSONObject s = new JSONObject();
 		s.put("id", place.getId());
-		s.put("typePlace", place.getTypePlace());
+		s.put("placetype", place.getTypePlace());
 		s.put("price", place.getPrice());
 		return s;
 	}

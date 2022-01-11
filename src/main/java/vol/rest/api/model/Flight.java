@@ -3,12 +3,12 @@ package vol.rest.api.model;
 import java.util.ArrayList;
 import java.util.Date;
 
-public class Vol {
+public class Flight {
 	private int id;
 	private ArrayList<Place> places;
 	private Date date;
 	
-	public Vol(int id, ArrayList<Place> places, Date date){
+	public Flight(int id, ArrayList<Place> places, Date date){
 		this.id = id;
 		this.places = places;
 		this.date = date;

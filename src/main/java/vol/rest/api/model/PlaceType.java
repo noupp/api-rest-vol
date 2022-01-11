@@ -1,5 +1,5 @@
 package vol.rest.api.model;
 
-public enum TypePlace {
+public enum PlaceType {
 	FirstClass, BusinessClass, EconomyClass
 }

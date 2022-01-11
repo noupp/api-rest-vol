@@ -5,12 +5,12 @@ import java.util.ArrayList;
 public class Company {
 	private int id;
 	private String name;
-	private ArrayList<Vol> vols;
+	private ArrayList<Flight> flights;
 	
-	public Company(int id, String name, ArrayList<Vol> vols) {
+	public Company(int id, String name, ArrayList<Flight> flights) {
 		this.id = id;
 		this.name = name;
-		this.vols = vols;
+		this.flights = flights;
 	}
 	
 	public int getId() {
@@ -29,11 +29,11 @@ public class Company {
 		this.name = name;
 	}
 	
-	public ArrayList<Vol> getVols() {
-		return this.vols;
+	public ArrayList<Flight> getFlights() {
+		return this.flights;
 	}
 	
-	public void setVols(ArrayList<Vol> vols) {
-		this.vols = vols;
+	public void setVols(ArrayList<Flight> flights) {
+		this.flights = flights;
 	}
 }

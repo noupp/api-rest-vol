@@ -6,11 +6,11 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 
 import vol.rest.api.DevDatabases;
-import vol.rest.api.model.Vol;
+import vol.rest.api.model.Flight;
 
-public class VolService {
-	public ArrayList<Vol> getAllVols(){
-		return new DevDatabases().vols;
+public class FlightService {
+	public ArrayList<Flight> getAllFlights(){
+		return new DevDatabases().flights;
 	}
 	
 	/**
@@ -19,7 +19,7 @@ public class VolService {
 	 * @return a JSONObject of a company
 	 */
 	@SuppressWarnings("unchecked")
-	public JSONObject volToJson(Vol vol) {
+	public JSONObject volToJson(Flight vol) {
 		JSONObject s = new JSONObject();
 		s.put("id", vol.getId());
 		s.put("date", vol.getDate());
@@ -31,9 +31,9 @@ public class VolService {
 	 * @return all places in a JSONArray
 	 */
 	@SuppressWarnings("unchecked")
-	public JSONArray toJson(ArrayList<Vol> vols) {
+	public JSONArray toJson(ArrayList<Flight> vols) {
 		JSONArray volsJSON = new JSONArray();
-		for (Vol vol: vols) {
+		for (Flight vol: vols) {
 			volsJSON.add(this.volToJson(vol));
 		}
 		return volsJSON;
