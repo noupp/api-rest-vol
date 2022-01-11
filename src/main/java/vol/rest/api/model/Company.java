@@ -5,6 +5,7 @@ import java.util.ArrayList;
 public class Company {
 	private int id;
 	private String name;
+	
 	private ArrayList<Flight> flights;
 	
 	public Company(int id, String name, ArrayList<Flight> flights) {
@@ -33,7 +34,7 @@ public class Company {
 		return this.flights;
 	}
 	
-	public void setVols(ArrayList<Flight> flights) {
+	public void setFlights(ArrayList<Flight> flights) {
 		this.flights = flights;
 	}
 }

@@ -29,10 +29,10 @@ public class FlightService {
 	 * @return a JSONObject of a company
 	 */
 	@SuppressWarnings("unchecked")
-	public JSONObject flightToJson(Flight vol) {
+	public JSONObject flightToJson(Flight flight) {
 		JSONObject s = new JSONObject();
-		s.put("id", vol.getId());
-		s.put("date", vol.getDate());
+		s.put("id", flight.getId());
+		s.put("date", flight.getDate());
 		return s;
 	}
 	
@@ -41,11 +41,11 @@ public class FlightService {
 	 * @return all places in a JSONArray
 	 */
 	@SuppressWarnings("unchecked")
-	public JSONArray toJson(ArrayList<Flight> vols) {
-		JSONArray volsJSON = new JSONArray();
-		for (Flight vol: vols) {
-			volsJSON.add(this.flightToJson(vol));
+	public JSONArray toJson(ArrayList<Flight> flights) {
+		JSONArray flightsJSON = new JSONArray();
+		for (Flight flight: flights) {
+			flightsJSON.add(this.flightToJson(flight));
 		}
-		return volsJSON;
+		return flightsJSON;
 	}
 }

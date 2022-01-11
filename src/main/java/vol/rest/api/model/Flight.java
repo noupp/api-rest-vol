@@ -5,8 +5,9 @@ import java.util.Date;
 
 public class Flight {
 	private int id;
-	private ArrayList<Place> places;
 	private Date date;
+
+	private ArrayList<Place> places;
 	
 	public Flight(int id, ArrayList<Place> places, Date date){
 		this.id = id;
@@ -22,19 +23,19 @@ public class Flight {
 		this.id = id;
 	}
 	
-	public ArrayList<Place> getPlaces() {
-		return this.places;
-	}
-	
-	public void setPlaces(ArrayList<Place> places) {
-		this.places = places;
-	}
-	
 	public Date getDate() {
 		return this.date;
 	}
 	
 	public void setDate(Date date) {
 		this.date = date;
+	}
+	
+	public ArrayList<Place> getPlaces() {
+		return this.places;
+	}
+	
+	public void setPlaces(ArrayList<Place> places) {
+		this.places = places;
 	}
 }
