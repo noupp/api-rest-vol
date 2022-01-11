@@ -32,7 +32,7 @@ public class FlightService {
 	public JSONObject flightToJson(Flight flight) {
 		JSONObject s = new JSONObject();
 		s.put("id", flight.getId());
-		s.put("date", flight.getDate());
+		s.put("date", flight.getDate().toString());
 		s.put("departure", flight.getDeparture());
 		s.put("destination", flight.getDestination());
 		return s;

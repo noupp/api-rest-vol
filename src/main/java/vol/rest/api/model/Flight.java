@@ -1,17 +1,17 @@
 package vol.rest.api.model;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Date;
 
 public class Flight {
 	private int id;
-	private Date date;
+	private LocalDate date;
 	private String departure;
 	private String destination;
 
 	private ArrayList<Place> places;
 	
-	public Flight(int id, ArrayList<Place> places, Date date, String departure, String destination){
+	public Flight(int id, ArrayList<Place> places, LocalDate date, String departure, String destination){
 		this.id = id;
 		this.places = places;
 		this.date = date;
@@ -27,11 +27,11 @@ public class Flight {
 		this.id = id;
 	}
 	
-	public Date getDate() {
+	public LocalDate getDate() {
 		return this.date;
 	}
 	
-	public void setDate(Date date) {
+	public void setDate(LocalDate date) {
 		this.date = date;
 	}
 	
