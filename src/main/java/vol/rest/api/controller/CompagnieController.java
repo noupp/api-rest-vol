@@ -1,4 +1,4 @@
-package vol.rest.api;
+package vol.rest.api.controller;
 
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.Path;
@@ -6,10 +6,10 @@ import jakarta.ws.rs.Produces;
 import jakarta.ws.rs.core.MediaType;
 
 /**
- * Root resource (exposed at "myresource" path)
+ * Root resource (exposed at "Compagnie" path)
  */
-@Path("test/myresource")
-public class MyResource {
+@Path("Compagnie")
+public class CompagnieController {
 
     /**
      * Method handling HTTP GET requests. The returned object will be sent
