@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import vol.rest.api.DevDatabases;
 import vol.rest.api.model.Company;
+import vol.rest.api.model.Vol;
 
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
@@ -18,6 +19,20 @@ public class CompanyService {
 		return new DevDatabases().companies.get(id);
 	}
 	
+	public Company getCompanyByName(String name) {
+		Company r = null;
+		for(Company company : new DevDatabases().companies) {
+			if(company.getName().equals(name)) {
+				r = company;
+			}
+		}
+		return r;
+	}
+	
+	public ArrayList<Vol> getAllVolsFromCompany(String name){
+		return getCompanyByName(name).getVols();
+	}
+	
 	/**
 	 * Transform one place to JSONObject
 	 * @param place
@@ -28,7 +43,6 @@ public class CompanyService {
 		JSONObject s = new JSONObject();
 		s.put("id", company.getId());
 		s.put("name", company.getName());
-		//s.put("vols", company.getVols());
 		return s;
 	}
 	
@@ -37,9 +51,9 @@ public class CompanyService {
 	 * @return all places in a JSONArray
 	 */
 	@SuppressWarnings("unchecked")
-	public JSONArray toJson() {
+	public JSONArray toJson(ArrayList<Company> companies) {
 		JSONArray companiesJSON = new JSONArray();
-		for (Company company: getAllCompanies()) {
+		for (Company company: companies) {
 			companiesJSON.add(this.companyToJson(company));
 		}
 		return companiesJSON;

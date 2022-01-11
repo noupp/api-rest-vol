@@ -11,8 +11,11 @@ import vol.rest.api.model.Vol;
 public class DevDatabases {
 	
 	public ArrayList<Company> companies = new ArrayList<Company>();
-	
+	public ArrayList<Vol> vols = new ArrayList<Vol>();
+	public ArrayList<Place> places = new ArrayList<Place>();
+
 	public DevDatabases() {
+		//Company 0
 		Place place0 = new Place(0, TypePlace.BusinessClass, 10);	
 		Place place1 = new Place(1, TypePlace.FirstClass, 20);	
 		Place place2 = new Place(2, TypePlace.EconomyClass, 5);
@@ -33,6 +36,7 @@ public class DevDatabases {
 		
 		companies.add(company0);
 		
+		//Company 1
 		Place place6 = new Place(6, TypePlace.BusinessClass, 10);	
 		Place place7 = new Place(7, TypePlace.FirstClass, 20);	
 		Place place8 = new Place(8, TypePlace.EconomyClass, 5);
@@ -52,5 +56,10 @@ public class DevDatabases {
 		Company company1 = new Company(1, "Cocorico", vols1);
 		
 		companies.add(company1);
+		
+		//Fill sub array
+		companies.forEach(c -> c.getVols().forEach(v -> vols.add(v)));
+		companies.forEach(c -> c.getVols().forEach(v -> v.getPlaces().forEach(p -> places.add(p))));
+		
 	}
 }
