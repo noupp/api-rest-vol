@@ -6,7 +6,6 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 
 import vol.rest.api.DevDatabases;
-import vol.rest.api.model.Flight;
 import vol.rest.api.model.Place;
 
 public class PlaceService {

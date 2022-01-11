@@ -4,7 +4,6 @@ import jakarta.ws.rs.GET;
 import jakarta.ws.rs.Path;
 import jakarta.ws.rs.PathParam;
 import jakarta.ws.rs.Produces;
-import vol.rest.api.service.FlightService;
 import vol.rest.api.service.PlaceService;
 
 /**

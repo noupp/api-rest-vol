@@ -33,6 +33,8 @@ public class FlightService {
 		JSONObject s = new JSONObject();
 		s.put("id", flight.getId());
 		s.put("date", flight.getDate());
+		s.put("departure", flight.getDeparture());
+		s.put("destination", flight.getDestination());
 		return s;
 	}
 	

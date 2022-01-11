@@ -21,14 +21,14 @@ public class DevDatabases {
 		Place place2 = new Place(2, PlaceType.EconomyClass, 5);
 		ArrayList<Place> places0 = new ArrayList<Place>();
 		places0.add(place0);places0.add(place1);places0.add(place2);
-		Flight flight0 = new Flight(0, places0, new Date());
+		Flight flight0 = new Flight(0, places0, new Date(), "Marseille", "Paris");
 		
 		Place place3 = new Place(3, PlaceType.BusinessClass, 10);	
 		Place place4 = new Place(4, PlaceType.FirstClass, 20);	
 		Place place5 = new Place(5, PlaceType.EconomyClass, 5);
 		ArrayList<Place> places1 = new ArrayList<Place>();
 		places1.add(place3);places1.add(place4);places1.add(place5);
-		Flight flight1 = new Flight(1, places1, new Date());
+		Flight flight1 = new Flight(1, places1, new Date(), "Lyon", "Brest");
 		
 		ArrayList<Flight> flights0 = new ArrayList<Flight>();
 		flights0.add(flight0); flights0.add(flight1);
@@ -42,14 +42,14 @@ public class DevDatabases {
 		Place place8 = new Place(8, PlaceType.EconomyClass, 5);
 		ArrayList<Place> places2 = new ArrayList<Place>();
 		places2.add(place6);places2.add(place7);places2.add(place8);
-		Flight flight2 = new Flight(2, places2, new Date());
+		Flight flight2 = new Flight(2, places2, new Date(), "Paris", "Tokyo");
 		
 		Place place9 = new Place(9, PlaceType.BusinessClass, 10);	
 		Place place10 = new Place(10, PlaceType.FirstClass, 20);	
 		Place place11 = new Place(11, PlaceType.EconomyClass, 5);
 		ArrayList<Place> places3 = new ArrayList<Place>();
 		places3.add(place9);places3.add(place10);places3.add(place11);
-		Flight flight3 = new Flight(3, places3, new Date());
+		Flight flight3 = new Flight(3, places3, new Date(), "Seoul", "Beijing");
 		
 		ArrayList<Flight> flights1 = new ArrayList<Flight>();
 		flights1.add(flight2); flights1.add(flight3);
