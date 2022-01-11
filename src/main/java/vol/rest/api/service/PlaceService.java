@@ -6,11 +6,17 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 
 import vol.rest.api.DevDatabases;
+import vol.rest.api.model.Flight;
 import vol.rest.api.model.Place;
 
 public class PlaceService {
+	
 	public ArrayList<Place> getAllPlaces(){
 		return new DevDatabases().places;
+	}
+	
+	public Place getPlaceById(int id) {
+		return new DevDatabases().places.get(id);
 	}
 	
 	/**

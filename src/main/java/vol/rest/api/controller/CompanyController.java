@@ -35,7 +35,7 @@ public class CompanyController {
 	@Produces("application/json; charset=UTF-8")
 	@Path("/{name}")
 	public String showCompanyInfo(@PathParam("name") String name) {
-	   return new CompanyService().companyToJson(new CompanyService().getCompanyByName(name)).toJSONString();
+	   return new CompanyService().companyToJson(new CompanyService().getCompanyByName(name.toLowerCase())).toJSONString();
 	}
 	
     /**
@@ -48,6 +48,6 @@ public class CompanyController {
 	@Produces("application/json; charset=UTF-8")
 	@Path("/{name}/flights")
 	public String showCompanyFlightsInfo(@PathParam("name") String name) {
-	   return new FlightService().toJson(new CompanyService().getAllFlightsFromCompany(name)).toJSONString();
+	   return new FlightService().toJson(new CompanyService().getAllFlightsFromCompany(name.toLowerCase())).toJSONString();
 	}
 }

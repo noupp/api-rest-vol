@@ -32,7 +32,7 @@ public class DevDatabases {
 		
 		ArrayList<Flight> flights0 = new ArrayList<Flight>();
 		flights0.add(flight0); flights0.add(flight1);
-		Company company0 = new Company(0, "Airfrance", flights0);
+		Company company0 = new Company(0, "airfrance", flights0);
 		
 		companies.add(company0);
 		
@@ -49,11 +49,11 @@ public class DevDatabases {
 		Place place11 = new Place(11, PlaceType.EconomyClass, 5);
 		ArrayList<Place> places3 = new ArrayList<Place>();
 		places3.add(place9);places3.add(place10);places3.add(place11);
-		Flight flight3 = new Flight(3, places2, new Date());
+		Flight flight3 = new Flight(3, places3, new Date());
 		
 		ArrayList<Flight> flights1 = new ArrayList<Flight>();
 		flights1.add(flight2); flights1.add(flight3);
-		Company company1 = new Company(1, "Cocorico", flights1);
+		Company company1 = new Company(1, "cocorico", flights1);
 		
 		companies.add(company1);
 		

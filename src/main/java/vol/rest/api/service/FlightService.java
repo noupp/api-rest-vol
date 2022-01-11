@@ -7,10 +7,20 @@ import org.json.simple.JSONObject;
 
 import vol.rest.api.DevDatabases;
 import vol.rest.api.model.Flight;
+import vol.rest.api.model.Place;
 
 public class FlightService {
+	
 	public ArrayList<Flight> getAllFlights(){
 		return new DevDatabases().flights;
+	}
+	
+	public Flight getFlightById(int id) {
+		return new DevDatabases().flights.get(id);
+	}
+	
+	public ArrayList<Place> getAllPlacesFromFlight(int id){
+		return new DevDatabases().flights.get(id).getPlaces();
 	}
 	
 	/**
@@ -19,7 +29,7 @@ public class FlightService {
 	 * @return a JSONObject of a company
 	 */
 	@SuppressWarnings("unchecked")
-	public JSONObject volToJson(Flight vol) {
+	public JSONObject flightToJson(Flight vol) {
 		JSONObject s = new JSONObject();
 		s.put("id", vol.getId());
 		s.put("date", vol.getDate());
@@ -34,7 +44,7 @@ public class FlightService {
 	public JSONArray toJson(ArrayList<Flight> vols) {
 		JSONArray volsJSON = new JSONArray();
 		for (Flight vol: vols) {
-			volsJSON.add(this.volToJson(vol));
+			volsJSON.add(this.flightToJson(vol));
 		}
 		return volsJSON;
 	}
