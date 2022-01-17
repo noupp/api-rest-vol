@@ -53,7 +53,7 @@
 
     <login-config>
         <auth-method>KEYCLOAK</auth-method>
-        <realm-name>demo</realm-name>
+        <realm-name>api-rest-vol-keycloak</realm-name>
     </login-config>
 
     <security-role>
