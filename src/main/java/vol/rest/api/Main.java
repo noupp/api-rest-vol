@@ -1,47 +1,23 @@
 package vol.rest.api;
 
-import org.glassfish.grizzly.http.server.HttpServer;
-import org.glassfish.jersey.grizzly2.httpserver.GrizzlyHttpServerFactory;
+import javax.ws.rs.ApplicationPath;
+
 import org.glassfish.jersey.server.ResourceConfig;
-import pl.grizzlysoftware.service.adapter.embedded.util.EmbeddedKeycloakInitialContext;
+import org.glassfish.jersey.server.ServerProperties;
 
-import java.io.IOException;
-import java.net.URI;
+@ApplicationPath("/")
+public class Main extends ResourceConfig {
 
-/**
- * Main class.
- *
- */
-public class Main {
-    // Base URI the Grizzly HTTP server will listen on
-    public static final String BASE_URI = "http://0.0.0.0:8082/";
+    public Main() {
+        // Register resources and providers using package-scanning.
+        packages("vol.rest.api");
 
-    /**
-     * Starts Grizzly HTTP server exposing JAX-RS resources defined in this application.
-     * @return Grizzly HTTP server.
-     */
-    public static HttpServer startServer() {
-        // create a resource config that scans for JAX-RS resources and providers
-        // in vol.rest.api package
-        final ResourceConfig rc = new ResourceConfig().packages("vol.rest.api");
+        // Register my custom provider - not needed if it's in my.package.
+        //register(SecurityRequestFilter.class);
+        // Register an instance of LoggingFilter.
+        //register(new LoggingFilter(LOGGER, true));
 
-        // create and start a new instance of grizzly http server
-        // exposing the Jersey application at BASE_URI
-        return GrizzlyHttpServerFactory.createHttpServer(URI.create(BASE_URI), rc);
-    }
-
-    /**
-     * Main method.
-     * @param args
-     * @throws IOException
-     */
-    public static void main(String[] args) throws IOException {
-        final HttpServer server = startServer();
-        System.out.println(String.format("Jersey app started with endpoints available at "
-                + "%s%nHit Ctrl-C to stop it...", BASE_URI));
-        System.in.read();
-
-
-        server.shutdown();
+        // Enable Tracing support.
+        property(ServerProperties.TRACING, "ALL");
     }
 }
