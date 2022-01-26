@@ -1,0 +1,29 @@
+version: "3.3"
+services:
+  tomcat:
+    container_name: api-vol_tomcat
+    build: .
+    volumes:
+      - ./target/api-rest-vol.war:/usr/local/tomcat/webapps/api-rest-vol.war
+    ports:
+      - '8080:8080'
+    networks:
+      - local-keycloak
+  keycloak:
+    depends_on:
+      - tomcat
+    container_name: api-vol_keycloak
+    environment:
+      KEYCLOAK_ADMIN: ${KEYCLOAK_ADMIN}
+      KEYCLOAK_ADMIN_PASSWORD: ${KEYCLOAK_ADMIN_PASSWORD}
+      KEYCLOAK_USER: ${KEYCLOAK_USER}
+      KEYCLOAK_PASSWORD: ${KEYCLOAK_PASSWORD}
+    image: jboss/keycloak:${KEYCLOAK_VERSION}
+    ports:
+      - "8081:8080"
+    restart: unless-stopped
+    networks:
+      - local-keycloak
+networks:
+  local-keycloak:
+    driver: bridge
