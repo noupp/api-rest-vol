@@ -4,8 +4,8 @@ RUN mkdir /usr/local/tomcat
 
 WORKDIR /usr/local/tomcat
 RUN apt-get update
-RUN apt-get -y install default-jre curl
-RUN curl -O https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.58/bin/apache-tomcat-9.0.58.tar.gz
+RUN apt-get -y install default-jre
+COPY target/apache-tomcat-9.0.58.tar.gz .
 RUN tar xf apache*.tar.gz
 RUN mv apache-tomcat-9.0.58/* /usr/local/tomcat/.
 
